@@ -1,6 +1,6 @@
 {
   "name": "casamento",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "server/app.js",
   "dependencies": {
     "express": "^4.13.3",
@@ -111,7 +111,8 @@
   "scripts": {
     "start": "node server",
     "test": "gulp test",
-    "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
+    "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update",
+	"postinstall": "npm install bower"
   },
   "private": true
 }
