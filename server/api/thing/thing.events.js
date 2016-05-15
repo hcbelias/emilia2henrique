@@ -4,9 +4,19 @@
 
 'use strict';
 
-import {EventEmitter} from 'events';
-import Thing from './thing.model';
-var ThingEvents = new EventEmitter();
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _events = require('events');
+
+var _thing = require('./thing.model');
+
+var _thing2 = _interopRequireDefault(_thing);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ThingEvents = new _events.EventEmitter();
 
 // Set max event listeners (0 == unlimited)
 ThingEvents.setMaxListeners(0);
@@ -20,14 +30,15 @@ var events = {
 // Register the event emitter to the model events
 for (var e in events) {
   var event = events[e];
-  Thing.schema.post(e, emitEvent(event));
+  _thing2.default.schema.post(e, emitEvent(event));
 }
 
 function emitEvent(event) {
-  return function(doc) {
+  return function (doc) {
     ThingEvents.emit(event + ':' + doc._id, doc);
     ThingEvents.emit(event, doc);
-  }
+  };
 }
 
-export default ThingEvents;
+exports.default = ThingEvents;
+//# sourceMappingURL=thing.events.js.map
