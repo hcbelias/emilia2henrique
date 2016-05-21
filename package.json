@@ -99,9 +99,7 @@
     "npm": "^2.14.20"
   },
   "scripts": {
-	"install": "npm install",
-	"postinstall": "./node_modules/bower/bin/bower install"
-    "start": "node serv	er",
+    "start": "node server",
     "test": "grunt test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
   },
