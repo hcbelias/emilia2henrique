@@ -28,7 +28,7 @@ exports.default = function (app) {
     resave: false,
     store: new MongoStore({
       mongooseConnection: _mongoose2.default.connection,
-      db: 'casasasasa'
+      db: 'casamento'
     })
   }));
 
