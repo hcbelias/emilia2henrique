@@ -36,20 +36,7 @@ exports.default = function (app) {
    * Lusca - express server security
    * https://github.com/krakenjs/lusca
    */
-  if ('test' !== env) {
-    app.use((0, _lusca2.default)({
-      csrf: {
-        angular: true
-      },
-      xframe: 'SAMEORIGIN',
-      hsts: {
-        maxAge: 31536000, //1 year, in seconds
-        includeSubDomains: true,
-        preload: true
-      },
-      xssProtection: true
-    }));
-  }
+  if ('test' !== env) {}
 
   app.set('appPath', _path2.default.join(_environment2.default.root, 'client'));
 
